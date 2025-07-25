@@ -42,7 +42,10 @@ INSTALLED_APPS = [
     'rest_framework',
     
     'apps.projects', 
-    'apps.common',   
+    'apps.common',  
+    
+    
+
     
 ]
 
