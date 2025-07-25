@@ -16,5 +16,4 @@ class Banner(BaseModel):
             if active_banners.count() >= 4:
                 if oldest := active_banners.order_by('id').first():
                     Banner.objects.filter(id=oldest.id).update(is_active=False)
-    def __str__(self):
-        return f"{self.title}-{self.is_active}"
+    
