@@ -1,7 +1,23 @@
 from rest_framework import serializers
-from apps.projects.models import Banner
+from .models import Banner,Videos, Music, Books
 
 class BannerSerializer(serializers.ModelSerializer):
     class Meta:
         model = Banner
         fields = '__all__'
+
+class VideosSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Videos
+        fields = '__all__'
+    
+class MusicSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Music
+        fields = '__all__'
+
+class BooksSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Books
+        fields = '__all__'
+    
