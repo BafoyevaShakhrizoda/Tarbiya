@@ -62,7 +62,7 @@ class TextBooks(BaseModel):
     book= models.FileField(upload_to='TextBook/books/',blank=True,null=True)
     instagram_link = models.URLField(blank=True, null=True)
     twitter_link= models.URLField(blank=True,null=True)
-    pinterest_link = models.URLField(blank=True, nulll=True)
+    pinterest_link = models.URLField(blank=True, null=True)
     facebook_link = models.URLField(blank=True, null = True)
     
     def __str__(self):
