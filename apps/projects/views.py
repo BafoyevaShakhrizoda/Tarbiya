@@ -1,6 +1,6 @@
 from rest_framework import generics
-from .models import Banner, Videos, Music, Books
-from .serializers import BannerSerializer, VideosSerializer, MusicSerializer, BooksSerializer
+from .models import Banner, Videos, Music, Books, TextBooks
+from .serializers import BannerSerializer, VideosSerializer, MusicSerializer, BooksSerializer, TextBooksSerializer
 
 class BannerListView(generics.ListAPIView):
     queryset = Banner.objects.all()
@@ -32,3 +32,12 @@ class BooksListView(generics.ListAPIView):
 class BooksDetailView(generics.RetrieveAPIView):
     queryset = Books.objects.all()
     serializer_class = BooksSerializer
+
+
+class TextBooksListView(generics.ListAPIView):
+    queryset = TextBooks.objects.all()
+    serializer_class = TextBooksSerializer
+
+class TextBooksDetailView(generics.RetrieveAPIView):
+    queryset = TextBooks.objects.all()
+    serializer_class = TextBooksSerializer
