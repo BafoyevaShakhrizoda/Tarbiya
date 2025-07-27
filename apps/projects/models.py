@@ -67,3 +67,9 @@ class TextBooks(BaseModel):
     
     def __str__(self):
         return self.title
+
+class Category(BaseModel):
+    name= models.CharField(max_length=255)
+    
+    def __str__(self):
+        return self.name

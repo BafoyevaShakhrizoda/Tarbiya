@@ -4,7 +4,8 @@ from apps.projects.views import(
                                 VideoDetailView, MusicListView, 
                                 MusicDetailView,BooksListView,
                                 BooksDetailView,TextBooksListView,
-                                TextBooksDetailView,
+                                TextBooksDetailView,CategoryListView,
+                                Search
 )
 urlpatterns = [
     path('banners/', BannerListView.as_view(), name='banner_list'),
@@ -16,4 +17,6 @@ urlpatterns = [
     path("books/<int:pk>/",BooksDetailView.as_view(),name="book_detail"),
     path('textbooks/',TextBooksListView.as_view(),name="textbook_list"),
     path("textbooks/<int:pk>/",TextBooksDetailView.as_view(),name="textbook_detail"),
+    path('categories/', CategoryListView.as_view(), name='category_list'),
+    path('serch/', Search.as_view(), name='search' ),
 ]
