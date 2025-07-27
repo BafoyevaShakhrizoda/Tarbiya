@@ -27,7 +27,6 @@ class TextBooksSerializer(serializers.ModelSerializer):
         model = TextBooks
         fields = '__all__'
 
-
 class CategorySerializer(serializers.ModelSerializer):
     class Meta:
         model = Category
