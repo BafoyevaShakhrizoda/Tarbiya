@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Banner,Videos, Music, Books, TextBooks, Category
+from .models import Banner,Videos, Music, Books, TextBooks, Category, Documents
 
 class BannerSerializer(serializers.ModelSerializer):
     class Meta:
@@ -30,4 +30,10 @@ class TextBooksSerializer(serializers.ModelSerializer):
 class CategorySerializer(serializers.ModelSerializer):
     class Meta:
         model = Category
+        fields = '__all__'
+        
+
+class DocumentsSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Documents
         fields = '__all__'

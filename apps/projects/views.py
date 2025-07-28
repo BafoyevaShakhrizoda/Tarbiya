@@ -1,8 +1,9 @@
 from rest_framework import generics
-from .models import Banner, Videos, Music, Books, TextBooks, Category
+from .models import Banner, Videos, Music, Books, TextBooks, Category, Documents
 from .serializers import (BannerSerializer, VideosSerializer,
                           MusicSerializer, BooksSerializer, 
-                          TextBooksSerializer, CategorySerializer
+                          TextBooksSerializer, CategorySerializer,
+                          DocumentsSerializer,
                           )
 from rest_framework.views import APIView
 from rest_framework.response import Response
@@ -53,6 +54,16 @@ class CategoryListView(generics.ListAPIView):
     def get_queryset(self):
         name= self.request.query_params.get('name')
         return self.queryset.filter(name=name)
+
+
+class DocumentsListView(generics.RetrieveAPIView):
+    queryset = Documents.objects.all()
+    serializer_class = DocumentsSerializer
+    
+class DocumentsDetailView(generics.RetrieveAPIView):
+    queryset = Documents.objects.all()
+    serializer_class = DocumentsSerializer
+
 
 class Search(APIView):
     def get(self, request):

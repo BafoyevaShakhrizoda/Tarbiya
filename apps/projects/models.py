@@ -73,3 +73,16 @@ class Category(BaseModel):
     
     def __str__(self):
         return self.name
+
+
+
+class Documents(BaseModel):
+    title= models.CharField(max_lengtth=100)
+    number = models.IntegerField()
+    image = models.ImageField(upload_to='documents/images/', blank=True, null=True)
+    document = models.FileField(upload_to='documents/files/')
+    items = models.TextField(blank=True, null=True)
+    
+    
+    def __str__(self):
+        return {self.title} - {self.number} - {self.items}
