@@ -56,7 +56,7 @@ class CategoryListView(generics.ListAPIView):
         return self.queryset.filter(name=name)
 
 
-class DocumentsListView(generics.RetrieveAPIView):
+class DocumentsListView(generics.ListAPIView):
     queryset = Documents.objects.all()
     serializer_class = DocumentsSerializer
     

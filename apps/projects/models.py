@@ -77,7 +77,7 @@ class Category(BaseModel):
 
 
 class Documents(BaseModel):
-    title= models.CharField(max_lengtth=100)
+    title= models.CharField(max_length=100)
     number = models.IntegerField()
     image = models.ImageField(upload_to='documents/images/', blank=True, null=True)
     document = models.FileField(upload_to='documents/files/')

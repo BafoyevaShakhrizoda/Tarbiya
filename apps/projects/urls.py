@@ -20,7 +20,6 @@ urlpatterns = [
     path("textbooks/<int:pk>/",TextBooksDetailView.as_view(),name="textbook_detail"),
     path('documents/',DocumentsListView.as_view(),name="documents_list"),
     path("documents/<int:pk>/",DocumentsDetailView.as_view(),name="documents_detail"),
-
     path('categories/', CategoryListView.as_view(), name='category_list'),
     path('serch/', Search.as_view(), name='search' ),
 ]
