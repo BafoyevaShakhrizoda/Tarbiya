@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Banner, Videos, Music, Books, TextBooks, Category
+from .models import Banner, Videos, Music, Books, TextBooks, Category, Documents
 
 admin.site.register(Banner)
 admin.site.register(Videos)
@@ -7,3 +7,4 @@ admin.site.register(Music)
 admin.site.register(Books)
 admin.site.register(TextBooks)
 admin.site.register(Category)
+admin.site.register(Documents)

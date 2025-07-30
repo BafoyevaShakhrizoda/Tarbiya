@@ -2,7 +2,7 @@ from django.urls import path
 from apps.projects.views import( 
                                 BannerListView, VideosListView,
                                 VideoDetailView, MusicListView, 
-                                MusicDetailView,BooksListView,
+                                MusicDetailView,MusicLikeView,BooksListView,
                                 BooksDetailView,TextBooksListView,
                                 TextBooksDetailView,CategoryListView,
                                 DocumentsListView,DocumentsDetailView,
@@ -14,6 +14,7 @@ urlpatterns = [
     path('videos/<int:pk>/', VideoDetailView.as_view(), name='banner_detail'),
     path('music/', MusicListView.as_view(), name='music_list'),
     path('music/<int:pk>/', MusicDetailView.as_view(), name='music_detail'),
+    path('music/liked/<int:pk>/', MusicLikeView.as_view(), name='music_like'),
     path('books/',BooksListView.as_view(),name="book_list"),
     path("books/<int:pk>/",BooksDetailView.as_view(),name="book_detail"),
     path('textbooks/',TextBooksListView.as_view(),name="textbook_list"),

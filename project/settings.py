@@ -59,6 +59,10 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+REST_FRAMEWORK = {
+    'DEFAULT_PAGINATION_CLASS': 'project.pagination.BookPagination',
+}
+
 ROOT_URLCONF = 'project.urls'
 
 TEMPLATES = [

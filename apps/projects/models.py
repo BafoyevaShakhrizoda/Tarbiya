@@ -56,7 +56,7 @@ class Books(BaseModel):
 
 class TextBooks(BaseModel):
     title = models.CharField(max_length=255)
-    classes = models.CharField(max_length=50, blank=True, null=True)
+    class_name = models.CharField(max_length=50, blank=True, null=True)
     description = models.TextField(blank=True, null=True)
     image = models.ImageField(upload_to='TextBook/images/', blank=True, null=True)
     book= models.FileField(upload_to='TextBook/books/',blank=True,null=True)
@@ -78,11 +78,11 @@ class Category(BaseModel):
 
 class Documents(BaseModel):
     title= models.CharField(max_length=100)
-    number = models.IntegerField()
+    number = models.IntegerField(blank=True, null=True)
     image = models.ImageField(upload_to='documents/images/', blank=True, null=True)
-    document = models.FileField(upload_to='documents/files/')
+    document = models.FileField(upload_to='documents/files/', blank=True, null=True)
     items = models.TextField(blank=True, null=True)
     
     
     def __str__(self):
-        return {self.title} - {self.number} - {self.items}
+        return self.title

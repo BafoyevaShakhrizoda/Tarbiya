@@ -15,6 +15,9 @@ class MusicSerializer(serializers.ModelSerializer):
     class Meta:
         model = Music
         fields = '__all__'
+        read_only_fields = ('is_favorite','title', 'description','audio')
+        
+
 
 class BooksSerializer(serializers.ModelSerializer):
     class Meta:
