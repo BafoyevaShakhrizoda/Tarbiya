@@ -6,7 +6,7 @@ from apps.projects.views import(
                                 BooksDetailView,TextBooksListView,
                                 TextBooksDetailView,CategoryListView,
                                 DocumentsListView,DocumentsDetailView,
-                                Search
+                                Search,SubscriptionView,
 )
 urlpatterns = [
     path('banners/', BannerListView.as_view(), name='banner_list'),
@@ -23,4 +23,5 @@ urlpatterns = [
     path("documents/<int:pk>/",DocumentsDetailView.as_view(),name="documents_detail"),
     path('categories/', CategoryListView.as_view(), name='category_list'),
     path('serch/', Search.as_view(), name='search' ),
+    path('subscribe/',SubscriptionView.as_view(),name='subscription')
 ]

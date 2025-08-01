@@ -1,9 +1,9 @@
 from rest_framework import generics
-from .models import Banner, Videos, Music, Books, TextBooks, Category, Documents
+from .models import Banner, Videos, Music, Books, TextBooks, Category, Documents,Subscription
 from .serializers import (BannerSerializer, VideosSerializer,
                           MusicSerializer, BooksSerializer, 
                           TextBooksSerializer, CategorySerializer,
-                          DocumentsSerializer,
+                          DocumentsSerializer,SubscriptionSerializer,
                           )
 from rest_framework.views import APIView
 from rest_framework.response import Response
@@ -121,6 +121,8 @@ class Search(APIView):
         return Response({"error": "Invalid category."}, status=400)
 
         
-            
-            
+class SubscriptionView(generics.CreateAPIView):
+    queryset = Subscription.objects.all()
+    serializer_class = SubscriptionSerializer
+
         

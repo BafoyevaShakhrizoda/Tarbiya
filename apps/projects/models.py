@@ -86,3 +86,9 @@ class Documents(BaseModel):
     
     def __str__(self):
         return self.title
+
+class Subscription(BaseModel):
+    email=models.EmailField(unique=True)
+
+    def __str__(self):
+        return self.email
